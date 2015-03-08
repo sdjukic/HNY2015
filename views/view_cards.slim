@@ -3,5 +3,6 @@ h1
   =@@player_name
   | 's cards
 
-- @@cards.each do |card|
-  img src="#{card['images']['fixed_width']['url']}" 
+- @@cards.each_index do |index|
+  a href="/choose_card?card=#{index}"
+    img src="#{@@cards[index]['images']['fixed_width_small']['url']}" 

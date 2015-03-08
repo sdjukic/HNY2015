@@ -1,0 +1,24 @@
+h2 You are judge
+
+javascript:
+    $(function () {
+    function getMyJson() {
+        $.ajax({
+            type: "GET",
+            url: "/judge_data",
+            dataType: "json",
+            success: function (data) {
+                alert("succes");
+                
+            },
+            error: function () {
+                //alert("fail");
+                //callback getMyJson here in 5 seconds
+                setTimeout(function () {
+                    getMyJson();
+                }, 5000)
+            }
+        });
+    }
+    getMyJson();
+    });
